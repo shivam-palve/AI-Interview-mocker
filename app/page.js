@@ -1,27 +1,32 @@
- import { Button } from "@/components/ui/button";
- import Image from "next/image";
+//  import { Button } from "@/components/ui/button";
+//  import Image from "next/image";
 
- export default function Home() {
-   return (
-     <div>
-       <h2>Shivam Palve!</h2>
-       <Button>Subscribe</Button>
-     </div>
+//  export default function Home() {
+//    return (
+//      <div>
+//        <h2>Shivam Palve!</h2>
+//        <Button>Dashboard</Button>
+//      </div>
    
-   );
- }
+//    );
+//  }
 
+"use client"
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import { useRouter } from "next/navigation"; 
 
+export default function Home() {
+  const router = useRouter();
 
-// import { Button } from "@/components/ui/button";
-// import Image from "next/image";
+  const navigateToDashboard = () => {
+    router.push("/dashboard"); 
+  };
 
-
-// export default function Home() {
-//   return (
-//     <div>
-//       <h2>Shivam Palve!</h2>
-//       <Button>Subscribe</Button>
-//     </div>
-//   );
-// }
+  return (
+    <div>
+      <h2>Welcome User!</h2>
+      <Button onClick={navigateToDashboard}>Dashboard</Button>
+    </div>
+  );
+}
